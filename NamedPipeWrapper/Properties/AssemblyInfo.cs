@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Named Pipe Wrapper library")]
-[assembly: AssemblyDescription("A simple, easy to use, strongly-typed wrapper around .NET named pipes.")]
+[assembly: AssemblyDescription("A simple, easy to use, strongly-typed wrapper around .NET named pipes.\r\n\r\nThis is a .NET Standard 2.0 build of the NamedPipeWrapper.\r\nOriginal repo: https://github.com/acdvorak/named-pipe-wrapper")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NamedPipeWrapper")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyProduct("CloudVeil.NamedPipeWrapper")]
+[assembly: AssemblyCopyright("2013 Andrew C. Dvorak")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.4.0.0")]
-[assembly: AssemblyFileVersion("1.4.0.0")]
+[assembly: AssemblyVersion("1.5.2.0")]
+[assembly: AssemblyFileVersion("1.5.2.0")]
