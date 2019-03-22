@@ -280,7 +280,24 @@ namespace NamedPipeWrapper
         public static NamedPipeServerStream CreatePipe(string pipeName, PipeSecurity pipeSecurity)
         {
             var stream = new NamedPipeServerStream(pipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous | PipeOptions.WriteThrough, 0, 0);
-            stream.SetAccessControl(pipeSecurity);
+
+            // This try-catch ensures that we can keep the pipe free for the future, if something bad occurs.
+            try
+            {
+                if (pipeSecurity != null)
+                {
+                    stream.SetAccessControl(pipeSecurity);
+                }
+            }
+            catch(Exception ex)
+            {
+                if(stream != null && !(ex is ObjectDisposedException))
+                {
+                    stream.Dispose();
+                }
+
+                throw ex;
+            }
 
             return stream;
         }
